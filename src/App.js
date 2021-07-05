@@ -1,14 +1,15 @@
-
-import './App.css';
-import Player from "./pages/Player"
-import ButtonLibraryContextProvider from "./context/buttonLibraryContext"
-
+import "./App.css";
+import Player from "./pages/Player";
+import ButtonLibraryContextProvider from "./context/buttonLibraryContext";
+import FetchSongsProvider from "./context/fetchSongsContext";
 
 function App() {
   return (
     <div className="App">
-    <ButtonLibraryContextProvider> 
-      <Player/>
+      <ButtonLibraryContextProvider>
+        <FetchSongsProvider>
+          <Player />
+        </FetchSongsProvider>
       </ButtonLibraryContextProvider>
     </div>
   );

@@ -1,0 +1,24 @@
+.songs-selector {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 30rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  box-shadow: 2px 2px 50px rgb(204, 204, 204);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.songs-selector.enabled-library {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.songs-selector h2 {
+  margin: 2.5rem 3rem;
+  text-align: left;
+}

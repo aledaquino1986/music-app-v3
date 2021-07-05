@@ -1,0 +1,36 @@
+.songs-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.songs-list-container__song {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 1rem;
+  transition: all 0.5s ease;
+}
+
+.songs-list-container__song:hover {
+  background-color: rgb(59, 211, 211);
+}
+
+.songs-list-container__song img {
+  width: 30%;
+  margin-right: 3rem;
+}
+
+.songs-list-container .songs-list-container__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.songs-list-container__info h4 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.songs-list-container__info h5 {
+  font-weight: 500;
+  font-size: 1.6rem;
+}

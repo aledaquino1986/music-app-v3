@@ -1,17 +1,15 @@
-import React from 'react'
-import Header from "../components/header/Header"
-import"./player.css"
-import { useButtonContext } from '../context/buttonLibraryContext'
-
+import React from "react";
+import "./player.css";
+import SongsSelector from "../components/songs-selector/SongsSelector";
+import AudioPlayer from "../components/audio-player/AudioPlayer";
 
 const Player = () => {
-  const {hiddenButtonState} = useButtonContext()
   return (
     <div className="section-container">
-     <section className={`songs-selector ${hiddenButtonState ? "disabled-library" : "enabled-library"}`}>This is the songs section</section>
-     <section className={`audio-player ${hiddenButtonState ? "disabled-library" : "enabled-library"}`}><Header/></section>
+      <SongsSelector />
+      <AudioPlayer />
     </div>
-  )
-}
+  );
+};
 
-export default Player
+export default Player;
