@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -7,47 +7,19 @@ import {
   faPause
 } from "@fortawesome/free-solid-svg-icons";
 import { useFetchSongs } from "../../../../context/fetchSongsContext";
+import { changeSongHandler } from "../../../../utils/changeSongHandler";
+import { playOrStopSongHandler } from "../../../../utils/playOrStopSongHandler";
 
 const Player = () => {
-  const [isPaused, setIsPaused] = useState(false);
-  const audioRef = useRef(null);
-
-  const { currentSong, songs, selectCurrentSong } = useFetchSongs();
+  const {
+    currentSong,
+    songs,
+    selectCurrentSong,
+    audioRef,
+    isPlaying,
+    setisPlaying
+  } = useFetchSongs();
   const { audio } = currentSong;
-
-  const handlePlaySong = () => {
-    setIsPaused(!isPaused);
-    if (isPaused) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-  };
-
-  const changeSongHandler = nextOrPreviousSong => {
-    const currentSongIndex = songs.findIndex(
-      song => song.id === currentSong.id
-    );
-
-    const firstIndex = 0;
-    const lastIndex = songs.length - 1;
-
-    if (nextOrPreviousSong === -1) {
-      if (currentSongIndex === firstIndex) {
-        const idOfLastSong = songs[songs.length - 1].id;
-        selectCurrentSong(idOfLastSong);
-      } else {
-        selectCurrentSong(songs[currentSongIndex + nextOrPreviousSong].id);
-      }
-    } else {
-      if (currentSongIndex === lastIndex) {
-        const idOfFirstSong = songs[0].id;
-        selectCurrentSong(idOfFirstSong);
-      } else {
-        selectCurrentSong(songs[currentSongIndex + nextOrPreviousSong].id);
-      }
-    }
-  };
 
   return (
     <div className="audio-controls-container ">
@@ -55,19 +27,51 @@ const Player = () => {
         <FontAwesomeIcon
           icon={faAngleLeft}
           size="2x"
-          onClick={() => changeSongHandler(-1)}
+          onClick={() =>
+            changeSongHandler(
+              songs,
+              -1,
+              selectCurrentSong,
+              currentSong,
+              audioRef,
+              setisPlaying,
+              isPlaying
+            )
+          }
         />
 
-        {isPaused ? (
-          <FontAwesomeIcon icon={faPause} size="2x" onClick={handlePlaySong} />
+        {isPlaying ? (
+          <FontAwesomeIcon
+            icon={faPause}
+            size="2x"
+            onClick={() =>
+              playOrStopSongHandler(setisPlaying, isPlaying, audioRef)
+            }
+          />
         ) : (
-          <FontAwesomeIcon icon={faPlay} size="2x" onClick={handlePlaySong} />
+          <FontAwesomeIcon
+            icon={faPlay}
+            size="2x"
+            onClick={() =>
+              playOrStopSongHandler(setisPlaying, isPlaying, audioRef)
+            }
+          />
         )}
 
         <FontAwesomeIcon
           icon={faAngleRight}
           size="2x"
-          onClick={() => changeSongHandler(1)}
+          onClick={() =>
+            changeSongHandler(
+              songs,
+              1,
+              selectCurrentSong,
+              currentSong,
+              audioRef,
+              setisPlaying,
+              isPlaying
+            )
+          }
         />
       </div>
       <audio src={audio} ref={audioRef}></audio>
