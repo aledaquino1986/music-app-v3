@@ -1,31 +1,37 @@
 import React, { useState } from "react";
-import { useFetchSongs } from "../../../context/fetchSongsContext";
-
-import "./player-controls.css";
 import Player from "./player/Player";
+import { formatTime } from "../../../utils/formatTime";
+import "./player-controls.css";
+import { useFetchSongs } from "../../../context/fetchSongsContext";
 
 const PlayerControls = () => {
   const [songInfo, setSongInfo] = useState({
-    currentTime: null,
-    duration: null
+    currentTime: 0,
+    duration: 0
   });
 
   const { currentTime, duration } = songInfo;
-
-  const formatTime = time => {
-    return (
-      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
-    );
-  };
+  const { audioRef } = useFetchSongs();
 
   const formattedCurrentTime = formatTime(currentTime);
   const formattedDuration = isNaN(duration) ? "0:00" : formatTime(duration);
+
+  const changeInputHandler = e => {
+    audioRef.current.currentTime = e.target.value;
+    setSongInfo({ ...songInfo, currentTime: e.target.value });
+  };
 
   return (
     <div className="player-container">
       <div className="audio-controls-input">
         <p>{formattedCurrentTime}</p>
-        <input type="range" />
+        <input
+          type="range"
+          min={0}
+          max={duration || 0}
+          value={currentTime}
+          onChange={changeInputHandler}
+        />
         <p>{formattedDuration || "0:00"}</p>
       </div>
       <Player songInfo={songInfo} setSongInfo={setSongInfo} />

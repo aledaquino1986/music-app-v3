@@ -4,11 +4,11 @@ export function playSongOnChange(isPlaying, audioRef) {
 
     if (playPromise !== undefined) {
       playPromise
-        .then(audio => {
+        .then(() => {
           audioRef.current.play();
         })
         .catch(err => {
-          console.log(err);
+          audioRef.current.play();
         });
     }
   }

@@ -85,6 +85,17 @@ const Player = ({ setSongInfo, songInfo }) => {
         ref={audioRef}
         onTimeUpdate={e => timeUpdateHandler(e)}
         onLoadedMetadata={timeUpdateHandler}
+        onEnded={() =>
+          changeSongHandler(
+            songs,
+            1,
+            selectCurrentSong,
+            currentSong,
+            audioRef,
+            setisPlaying,
+            isPlaying
+          )
+        }
       ></audio>
     </div>
   );
