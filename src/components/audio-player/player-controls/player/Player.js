@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -10,7 +10,7 @@ import { useFetchSongs } from "../../../../context/fetchSongsContext";
 import { changeSongHandler } from "../../../../utils/changeSongHandler";
 import { playOrStopSongHandler } from "../../../../utils/playOrStopSongHandler";
 
-const Player = () => {
+const Player = ({ setSongInfo, songInfo }) => {
   const {
     currentSong,
     songs,
@@ -20,6 +20,12 @@ const Player = () => {
     setisPlaying
   } = useFetchSongs();
   const { audio } = currentSong;
+
+  const timeUpdateHandler = e => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+    setSongInfo({ ...songInfo, currentTime, duration });
+  };
 
   return (
     <div className="audio-controls-container ">
@@ -74,7 +80,12 @@ const Player = () => {
           }
         />
       </div>
-      <audio src={audio} ref={audioRef}></audio>
+      <audio
+        src={audio}
+        ref={audioRef}
+        onTimeUpdate={e => timeUpdateHandler(e)}
+        onLoadedMetadata={timeUpdateHandler}
+      ></audio>
     </div>
   );
 };

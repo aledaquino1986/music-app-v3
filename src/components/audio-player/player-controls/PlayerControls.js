@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetchSongs } from "../../../context/fetchSongsContext";
 
 import "./player-controls.css";
 import Player from "./player/Player";
 
 const PlayerControls = () => {
-  const { currentSong } = useFetchSongs();
+  const [songInfo, setSongInfo] = useState({
+    currentTime: null,
+    duration: null
+  });
+
+  const { currentTime, duration } = songInfo;
+
+  const formatTime = time => {
+    return (
+      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+    );
+  };
+
+  const formattedCurrentTime = formatTime(currentTime);
+  const formattedDuration = isNaN(duration) ? "0:00" : formatTime(duration);
 
   return (
     <div className="player-container">
       <div className="audio-controls-input">
-        <p>00:00</p>
-        <input type="range" name="" id="" />
-        <p>03:00</p>
+        <p>{formattedCurrentTime}</p>
+        <input type="range" />
+        <p>{formattedDuration || "0:00"}</p>
       </div>
-      <Player />
+      <Player songInfo={songInfo} setSongInfo={setSongInfo} />
     </div>
   );
 };
