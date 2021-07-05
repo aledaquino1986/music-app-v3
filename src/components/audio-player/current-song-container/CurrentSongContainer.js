@@ -4,12 +4,15 @@ import "./current-song.css";
 
 const CurrentSongContainer = () => {
   const { currentSong } = useFetchSongs();
-
   const { name, cover, artist } = currentSong;
 
   return (
     <div className="current-song-container">
-      <img src={cover} alt="" />
+      <img
+        src={cover}
+        alt={`${name} by ${artist}`}
+        title={`${name} by ${artist}`}
+      />
       <h4>{name}</h4>
       <h5>{artist}</h5>
     </div>

@@ -14,6 +14,11 @@
   background-color: rgb(59, 211, 211);
 }
 
+.isActive {
+  background-color: rgb(137, 189, 189);
+  color: rgb(80, 77, 77);
+}
+
 .songs-list-container__song img {
   width: 30%;
   margin-right: 3rem;

@@ -1,0 +1,28 @@
+.player-container {
+  padding: 2rem;
+}
+
+.audio-controls-input {
+  display: flex;
+  justify-content: center;
+}
+
+.audio-controls-input p {
+  margin: 0 2rem;
+}
+
+.audio-controls-input input {
+  width: 50%;
+}
+
+.audio-controls-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.audio-controls {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

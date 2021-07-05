@@ -3,6 +3,7 @@ import { useButtonContext } from "../../context/buttonLibraryContext";
 import "./audio-player.css";
 import Nav from "../nav/Nav";
 import CurrentSongContainer from "./current-song-container/CurrentSongContainer";
+import PlayerControls from "./player-controls/PlayerControls";
 
 const AudioPlayer = () => {
   const { hiddenButtonState } = useButtonContext();
@@ -14,6 +15,7 @@ const AudioPlayer = () => {
     >
       <Nav />
       <CurrentSongContainer />
+      <PlayerControls />
     </section>
   );
 };
