@@ -6,13 +6,14 @@ import { useButtonContext } from "../../context/buttonLibraryContext";
 import "./nav.css";
 
 const Nav = () => {
-  const { changeButtonState } = useButtonContext();
+  const { changeButtonState, hiddenButtonState } = useButtonContext();
 
   return (
     <nav className="nav">
       <h1>Chillhop sounds</h1>
       <button onClick={changeButtonState}>
-        Library <FontAwesomeIcon icon={faMusic} />
+        {hiddenButtonState ? "Player" : "Library"}
+        <FontAwesomeIcon icon={faMusic} />
       </button>
     </nav>
   );
