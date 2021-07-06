@@ -4,10 +4,42 @@
 }
 
 .audio-player.enabled-library {
+  transition: all 1s ease;
   margin-left: 30rem;
-  transition: all 0.5s ease;
 }
 
 .audio-player.disabled-library {
-  transition: all 0.5s ease;
+  transition: all 1.5s ease;
+}
+
+@media screen and (max-width: 700px) {
+  .audio-player.enabled-library {
+  }
+
+  .audio-player.enabled-library h1 {
+    transition: opacity 1s ease;
+    opacity: 0;
+  }
+
+  .audio-player.disabled-library h1 {
+    transition: opacity 1s ease;
+    opacity: 1;
+  }
+
+  .audio-player.enabled-library .current-song-container,
+  .player-container {
+    transition: opacity 2s ease;
+    opacity: 0;
+  }
+
+  .audio-player.disabled-library .current-song-container,
+  .audio-player.disabled-library .player-container {
+    transition: opacity 2s ease;
+    opacity: 1;
+  }
+  .enabled-library .nav button {
+    visibility: initial;
+    position: fixed;
+    z-index: 2;
+  }
 }

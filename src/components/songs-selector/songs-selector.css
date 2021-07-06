@@ -10,7 +10,7 @@
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   transform: translateX(-100%);
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 1.5s ease;
 }
 
 .songs-selector.enabled-library {
@@ -21,4 +21,10 @@
 .songs-selector h2 {
   margin: 2.5rem 3rem;
   text-align: left;
+}
+
+@media screen and (max-width: 700px) {
+  .songs-selector {
+    width: 100%;
+  }
 }
