@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const ButtonContext = createContext();
 
 const ButtonLibraryContextProvider = ({ children }) => {
-  const [hiddenButtonState, sethiddenButtonState] = useState(false);
+  const [hiddenButtonState, sethiddenButtonState] = useState(true);
 
   const changeButtonState = () => {
     sethiddenButtonState(!hiddenButtonState);
