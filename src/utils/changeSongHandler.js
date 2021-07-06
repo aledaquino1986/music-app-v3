@@ -2,7 +2,9 @@ export const changeSongHandler = (
   songs,
   nextOrPreviousSong,
   selectCurrentSong,
-  currentSong
+  currentSong,
+  setIsPlaying,
+  isPlaying
 ) => {
   const currentSongIndex = songs.findIndex(song => song.id === currentSong.id);
   const firstIndex = 0;
