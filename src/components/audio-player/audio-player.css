@@ -1,3 +1,6 @@
+* {
+}
+
 .audio-player {
   width: 100%;
   min-height: 100vh;
@@ -14,6 +17,13 @@
 
 @media screen and (max-width: 700px) {
   .audio-player.enabled-library {
+    transition: all 1s ease;
+    margin-left: 0;
+  }
+
+  .audio-player.enabled-library .nav button {
+    margin-left: 20rem;
+    transition: margin 1s;
   }
 
   .audio-player.enabled-library h1 {
