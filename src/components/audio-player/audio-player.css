@@ -47,6 +47,6 @@
   .enabled-library .nav button {
     visibility: initial;
     position: fixed;
-    z-index: 2;
+    z-index: 20;
   }
 }

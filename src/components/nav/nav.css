@@ -16,6 +16,7 @@
   border: 2px solid black;
   transition: all 0.5s ease;
   box-shadow: 1px 1px 5px black;
+  z-index: 15;
 }
 
 .nav button:hover {
