@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <nav className="nav">
-      <h1>Chillhop sounds</h1>
+      <h1>Neme sounds</h1>
       <button onClick={changeButtonState}>
         {hiddenButtonState ? "Player" : "Library"}
         <FontAwesomeIcon icon={faMusic} />
