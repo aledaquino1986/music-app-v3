@@ -19,14 +19,16 @@
   z-index: 15;
 }
 
-.nav button:hover {
-  color: #fff;
-  background-color: rgb(31, 29, 29);
-  transform: translateY(-2px);
-  box-shadow: 1px 1px 20px black;
-}
+@media (hover: hover) {
+  .nav button:hover {
+    color: #fff;
+    background-color: rgb(31, 29, 29);
+    transform: translateY(-2px);
+    box-shadow: 1px 1px 20px black;
+  }
 
-.nav button:active {
-  transform: translateY(2px);
-  box-shadow: 1px 1px 5px black;
+  .nav button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 5px black;
+  }
 }
