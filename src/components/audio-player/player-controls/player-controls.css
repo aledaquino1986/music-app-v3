@@ -26,3 +26,9 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media screen and (max-width: 700px) {
+  .audio-controls-container {
+    width: 100%;
+  }
+}

@@ -8,7 +8,7 @@
 }
 
 .current-song-container img {
-  width: 25%;
+  width: 30%;
   border-radius: 50%;
   margin-bottom: 3rem;
 }
@@ -19,4 +19,10 @@
 
 .current-song-container h5 {
   color: rgb(94, 122, 118);
+}
+
+@media screen and (max-width: 700px) {
+  .current-song-container img {
+    width: 50%;
+  }
 }
