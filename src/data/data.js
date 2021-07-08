@@ -9,7 +9,8 @@ const songs = [
     id: uuidv4(),
     active: true,
     color: ["#5167A1", "#BA756F"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=11770"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=11770",
+    author: "https://chillhop.com/artists/2761-makzo/"
   },
 
   {
@@ -20,7 +21,8 @@ const songs = [
     id: uuidv4(),
     active: false,
     color: ["#5167A1", "#BA756F"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=11773"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=11773",
+    author: "https://chillhop.com/artists/2761-makzo/"
   },
 
   {
@@ -31,7 +33,8 @@ const songs = [
     id: uuidv4(),
     active: false,
     color: ["#5167A1", "#BA756F"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=11778"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=11778",
+    author: "https://chillhop.com/artists/2761-makzo/"
   },
 
   {
@@ -42,7 +45,8 @@ const songs = [
     id: uuidv4(),
     active: false,
     color: ["#5167A1", "#BA756F"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=11771"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=11771",
+    author: "https://chillhop.com/artists/2761-makzo/"
   },
 
   {
@@ -53,7 +57,8 @@ const songs = [
     id: uuidv4(),
     active: false,
     color: ["#DBE8DF", "#64746E"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=11243"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=11243",
+    author: "https://chillhop.com/artists/1934-the-field-tapes/"
   },
 
   {
@@ -64,7 +69,8 @@ const songs = [
     id: uuidv4(),
     active: false,
     color: ["#5167A1", "#BA756F"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=11244"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=11244",
+    author: "https://chillhop.com/artists/1934-the-field-tapes/"
   },
 
   {
@@ -75,7 +81,8 @@ const songs = [
     id: uuidv4(),
     active: false,
     color: ["#32464D", "#34353A"],
-    audio: "https://mp3.chillhop.com/serve.php/?mp3=10310"
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=10310",
+    author: "https://chillhop.com/artists/121-sworn/"
   }
 ];
 

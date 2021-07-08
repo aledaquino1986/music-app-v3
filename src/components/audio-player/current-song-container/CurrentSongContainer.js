@@ -4,7 +4,7 @@ import "./current-song.css";
 
 const CurrentSongContainer = () => {
   const { currentSong, isPlaying } = useFetchSongs();
-  const { name, cover, artist } = currentSong;
+  const { name, cover, artist, author } = currentSong;
 
   return (
     <div className="current-song-container">
@@ -15,7 +15,9 @@ const CurrentSongContainer = () => {
         title={`${name} by ${artist}`}
       />
       <h4>{name}</h4>
-      <h5>{artist}</h5>
+      <a href={author} _blank>
+        <h5>{artist}</h5>
+      </a>
     </div>
   );
 };
