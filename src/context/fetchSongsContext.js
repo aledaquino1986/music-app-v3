@@ -19,15 +19,27 @@ const FetchSongsContextProvider = ({ children }) => {
 
   const selectCurrentSong = async id => {
     const currentPlayingSong = songs.find(song => song.id === id);
+   await setCurrentSong(currentPlayingSong);
 
-    
+   if (isPlaying) {
+     audioRef.current.play()
+   }
+   
+  };
+
+  const selectCurrentSongInList = async id => {
+    const currentPlayingSong = songs.find(song => song.id === id);
+    if (!isPlaying) {
+      setisPlaying(!isPlaying);
+      audioRef.current.play()
+    }
 
    await setCurrentSong(currentPlayingSong);
 
    if (isPlaying) {
      audioRef.current.play()
    }
-  };
+  }
 
   useEffect(() => {
     setSongs(data);
@@ -42,7 +54,8 @@ const FetchSongsContextProvider = ({ children }) => {
         selectCurrentSong,
         audioRef,
         isPlaying,
-        setisPlaying
+        setisPlaying,
+        selectCurrentSongInList
       }}
     >
       {children}
@@ -59,7 +72,8 @@ export const useFetchSongs = () => {
     selectCurrentSong,
     audioRef,
     isPlaying,
-    setisPlaying
+    setisPlaying,
+    selectCurrentSongInList
   } = useContext(FetchSongsContext);
 
   return {
@@ -68,6 +82,7 @@ export const useFetchSongs = () => {
     selectCurrentSong,
     audioRef,
     isPlaying,
-    setisPlaying
+    setisPlaying,
+    selectCurrentSongInList
   };
 };

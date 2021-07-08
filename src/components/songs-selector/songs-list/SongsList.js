@@ -3,7 +3,7 @@ import "./songslist.css";
 import { useFetchSongs } from "../../../context/fetchSongsContext";
 
 const SongsList = () => {
-  const { songs, selectCurrentSong, currentSong } = useFetchSongs();
+  const { songs, currentSong, selectCurrentSongInList } = useFetchSongs();
 
   return (
     <div className="songs-list-container">
@@ -13,7 +13,7 @@ const SongsList = () => {
           <div
             key={id}
             className={`songs-list-container__song ${isActive}`}
-            onClick={() => selectCurrentSong(id)}
+            onClick={() => selectCurrentSongInList(id)}
           >
             <img src={cover} alt="" />
             <div className="songs-list-container__info">
