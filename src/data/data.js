@@ -83,6 +83,18 @@ const songs = [
     color: ["#32464D", "#34353A"],
     audio: "https://mp3.chillhop.com/serve.php/?mp3=10310",
     author: "https://chillhop.com/artists/121-sworn/"
+  },
+
+  {
+    name: "Higher",
+    artist: "Misha, Jussi Halme",
+    cover:
+      "https://chillhop.com/wp-content/uploads/2021/05/2473c60e471fe9b40e246bf7711c87d3d6ea69a7-1024x1024.jpg",
+    id: uuidv4(),
+    active: false,
+    color: ["#B77B73", "#15171F"],
+    audio: "https://mp3.chillhop.com/serve.php/?mp3=15088",
+    author: "https://chillhop.com/artists/123-misha/"
   }
 ];
 
