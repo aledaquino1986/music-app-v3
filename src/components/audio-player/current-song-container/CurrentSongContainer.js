@@ -15,7 +15,7 @@ const CurrentSongContainer = () => {
         title={`${name} by ${artist}`}
       />
       <h4>{name}</h4>
-      <a href={author} _blank>
+      <a href={author} _blank="true">
         <h5>{artist}</h5>
       </a>
     </div>

@@ -6,7 +6,7 @@ import React, {
   useRef
 } from "react";
 import data from "../data/data";
-import { playSongOnChange } from "../utils/playSongOnChange";
+// import { playSongOnChange } from "../utils/playSongOnChange";
 
 const FetchSongsContext = createContext();
 
@@ -17,18 +17,16 @@ const FetchSongsContextProvider = ({ children }) => {
 
   const audioRef = useRef(null);
 
-  const selectCurrentSong = id => {
+  const selectCurrentSong = async id => {
     const currentPlayingSong = songs.find(song => song.id === id);
 
-    /* delete if it works*/
-    if (!isPlaying) {
-      setisPlaying(true);
-      audioRef.current.play();
-    }
+    
 
-    setCurrentSong(currentPlayingSong);
+   await setCurrentSong(currentPlayingSong);
 
-    playSongOnChange(isPlaying, audioRef);
+   if (isPlaying) {
+     audioRef.current.play()
+   }
   };
 
   useEffect(() => {
