@@ -39,7 +39,6 @@ const Player = ({ setSongInfo, songInfo }) => {
               -1,
               selectCurrentSong,
               currentSong,
-              audioRef,
               setisPlaying,
               isPlaying
             )
