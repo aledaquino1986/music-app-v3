@@ -20,11 +20,9 @@
 
   .audio-player.enabled-library .nav button {
     margin-left: 20rem;
-    transition: margin 1s;
   }
 
   .audio-player.enabled-library h1 {
-    transition: opacity 1s ease;
     opacity: 0;
   }
 

@@ -20,12 +20,6 @@ const FetchSongsContextProvider = ({ children }) => {
   const selectCurrentSong = id => {
     const currentPlayingSong = songs.find(song => song.id === id);
 
-    /* delete if it works*/
-    // if (!isPlaying) {
-    //   setisPlaying(!isPlaying);
-    //   audioRef.current.play();
-    // }
-
     setCurrentSong(currentPlayingSong);
 
     playSongOnChange(isPlaying, audioRef);
